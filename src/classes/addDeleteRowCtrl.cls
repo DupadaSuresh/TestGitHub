@@ -1,5 +1,9 @@
+/*
+	This is added on June_28_2017
+*/
 public with sharing class addDeleteRowCtrl {
-    public list<myWrapper> wlist{get;set;}
+    //public list<myWrapper> wlist{get;set;}
+	public list<myWrapper> wlist{get;set;}
     public addDeleteRowCtrl(){
         wlist=new list<myWrapper>();
         wlist.add(new myWrapper(this));
