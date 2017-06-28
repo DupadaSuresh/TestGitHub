@@ -1,0 +1,14 @@
+<apex:page >
+<apex:includeScript value="//cdn.ckeditor.com/4.7.0/basic/ckeditor.js" />
+<style>
+[class='productNotes']:not(:focus):before{
+        content:'Good One';
+    }
+    </style>
+    
+    <div data-text="Click to Edit Notes" class="productNotes" id="myId" />
+    
+    <input type="text" contentEditable="true"/>
+    
+ 
+</apex:page>

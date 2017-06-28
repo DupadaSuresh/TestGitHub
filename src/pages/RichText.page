@@ -1,0 +1,39 @@
+<apex:page >
+ <!-- apex:includeScript value="{!$Resource.ckeditor}"/ -->
+  <apex:includeScript value="//cdn.ckeditor.com/4.7.0/basic/ckeditor.js" />
+  <style>   
+     
+      div.cke_editable p br:empty:not(:focus):after{
+          content: 'please enter';
+      }
+  </style>
+  
+ <apex:form id="fm">
+ <apex:pageBlock id="pb">
+     <apex:pageBlockButtons >
+         <apex:commandButton action="{!Save}" value="Save"/>
+     </apex:pageBlockButtons>
+     <apex:pageBlockSection columns="1" id="pbs">
+        
+      
+         
+         <apex:outputPanel id="myDt2">
+             <apex:inputTextArea id="msdpst2" richtext="false"/>
+            
+              <script>
+                  CKEDITOR.inline( '{!$Component.msdpst2}' ,
+                    {
+                        height: '800px'
+                    });
+                    
+             </script>
+         </apex:outputPanel>
+         
+         
+     </apex:pageBlockSection>
+ </apex:pageBlock>
+ 
+ 
+ </apex:form>
+
+</apex:page>

@@ -1,0 +1,54 @@
+<apex:page >
+   <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"/>
+    <script>
+        var myApp = angular.module("myApplication", []);
+    </script>
+    
+    <div ng-app="myApplication">
+        {{ 10 + 2}}
+        <br/>
+        <div ng-init="FirstName='Dhruvsoft'">
+        </div>
+        span ::  <span>
+             {{FirstName}}
+         </span>
+         <br/>
+         <input type="Text" ng-model="FirstName"/>
+
+    </div>
+    <p> General javascript </p>
+    <div id="JavaSrpt">        
+        My Input <input id="myInput" onkeyup="doChange();"/>
+        <span id="myspan">
+            
+        </span>
+        
+    </div>
+    <script>
+        function doChange(){            
+            document.getElementById("myspan").innerHTML= document.getElementById("myInput").value; 
+        }
+    </script>
+    <p> JQeury approach </p>
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <div id="JQPanel">        
+        My Input <input id="jQInput"/>
+        <span id="jQspan">
+            
+        </span>
+        
+    </div>
+   
+    <script>
+         $(document).ready(function(){
+             $("#jQInput").keyup(function(){                              
+                 $("#jQspan").html($(this).val());
+             });
+        });
+    </script>
+    
+    
+</apex:page>
