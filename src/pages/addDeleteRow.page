@@ -1,0 +1,31 @@
+<apex:page controller="addDeleteRowCtrl" docType="html-5.0">
+<apex:includeScript value="//cdn.ckeditor.com/4.7.0/basic/ckeditor.js" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+var j$ = jQuery.noConflict();
+
+function refreshTextArea(){
+   j$('textarea.Desc').each(function () {
+       var jQtextarea = j$(this);
+       jQtextarea.val(CKEDITOR.instances[jQtextarea.attr('name')].getData());
+    });
+}
+</script>
+ <apex:form >
+     <apex:pageBlock >
+         <apex:pageBlockSection id="pbs">
+             <apex:pageBlockTable value="{!wlist}" var="item">
+                 <apex:column >
+                     <apex:inputTextarea value="{!item.myInput}" id="myInputId" styleClass="Desc"/>
+                       <script>
+                                CKEDITOR.replace( '{!$Component.myInputId}' );
+                                CKEDITOR.config.height = 100;
+                                CKEDITOR.config.removePlugins = 'about';
+                       </script>
+                 </apex:column>
+             </apex:pageBlockTable>
+         </apex:pageBlockSection>
+         <apex:commandButton action="{!addRow}" value="Addrow" onclick="refreshTextArea()" reRender="pbs" />
+     </apex:pageBlock>
+ </apex:form>
+</apex:page>

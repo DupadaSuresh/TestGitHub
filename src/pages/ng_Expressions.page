@@ -1,0 +1,70 @@
+<apex:page >
+  <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"/>
+  <script>
+      var myApp = angular.module("myApplication", []);
+  </script>
+  <div ng-app="myApplication">
+      <span>is 1==1 :: {{ 1==1}}</span>
+      
+     
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!--
+ <p>
+          {{ {Name:"Dhruvsoft", Location:"Hyderabad"}.Location}}
+      </p>
+      <p>
+          {{ ["JQuery", "AngularJS", "KnokOutJS", "NodeJS"][2] }}
+      </p>
+  -->  
+</apex:page>

@@ -1,0 +1,21 @@
+<apex:page >
+    <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"/>
+    <script>
+        var myApp = angular.module("myApplication", []);
+        
+        var myCtrl = function($scope){
+            $scope.Name = "DhruvSoft";
+        };
+        
+        myApp.controller("myController", myCtrl);
+        
+    </script>
+    
+    <div ng-app="myApplication" ng-controller="myController">    
+        {{ 10 + 2}}
+        <br/>
+        {{Name}}
+        
+    </div>
+
+</apex:page>

@@ -1,0 +1,57 @@
+<apex:page >
+    <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"/>
+    <script>
+        var myApp = angular.module("myApplication", []);
+        
+        myApp.controller("myController", function($scope){
+            var emps = [{Name:"Hyderabad", Id:"A-1", logo: "https://c.ap5.content.force.com/servlet/servlet.ImageServer?id=0157F000000TwEa&amp;oid=00D7F000000rK5P&amp;lastMod=1496221864000"},
+                        {Name:"Telangana", Id:"A-2"},
+                        {Name:"Andhra", Id:"A-3"},
+                        {Name:"Anantapur", Id:"A-4"}
+                      ];
+                $scope.employees = emps;
+                $scope.userInp = '';
+                $scope.ord= function(v){
+                    $scope.ordele = v;
+                };
+        });
+        
+        
+    </script>
+ <apex:form >
+    <body ng-app="myApplication" ng-controller="myController">
+        Search <input type="text" ng-model="userInp"/>
+        <table border="1">
+            <tr>
+                <td>
+                    Even/Odd
+                </td>
+                <td>Index
+                </td>
+                <td ng-click="ord('Name');">
+                    Name
+                </td>
+                <td ng-click="ord('Id');">
+                    ID
+                </td>
+            </tr>
+            <tr ng-repeat="emp in employees | filter:userInp">
+                
+                <td>
+                    <img src="{{emp.logo}}"/>
+                </td>
+                <td>
+                    {{$index}}
+                </td>
+                <td>
+                    {{emp.Name | uppercase}}
+                </td>
+                <td>
+                    {{emp.Id | lowercase}}
+                </td>
+            </tr>
+        </table>
+              
+    </body>
+    </apex:form>   
+</apex:page>

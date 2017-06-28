@@ -1,0 +1,28 @@
+<apex:page >
+    <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"/>
+    <script>
+        var myApp = angular
+                        .module("myApplication", [])
+                        .controller("myController", function($scope){
+                            $scope.Name = "Dhruvsoft";
+                            var emps = [ {Name: "Suresh", EmpId: "DS-1"},
+                                         {Name: "Dupada", EmpId: "DS-2"}
+                                       ];
+                            $scope.employees = emps;
+                        });
+                    
+    </script>
+    
+    <div ng-app="myApplication">
+        {{ 10 + 2}}
+        <div ng-controller="myController">
+            Name in Model ----  {{ Name }}
+            <br/>
+            <input ng-model=" Name "/>
+            
+            <div ng-repeat="emp in employees">{{ $index }}
+                <span ng-bind="emp.Name"></span>
+            </div>
+        </div>
+    </div>
+</apex:page>
